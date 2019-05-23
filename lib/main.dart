@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'bloc/bloc.dart';
+import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'model/post.dart';
 import 'package:http/http.dart' as http;
+import 'bloc/post_bloc_delegate.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  BlocSupervisor.delegate = SimpleBlocDelegate();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
 
